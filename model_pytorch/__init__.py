@@ -6,8 +6,10 @@ class Net(nn.Module):
         super(Net, self).__init__()
         # First convolution layer
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5)
+        self.avg1 = nn.AvgPool2d(kernel_size=2, stride=2)
         # Second convolution layer
         self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
+        self.avg2 = nn.AvgPool2d(kernel_size=2, stride=2)
         # Third convolution layer
         # According to the paper, we have conv3 because if the input size to the network changes the mapping in this
         # layer will change from 1x1 (with 32x32 image size the mapping is 1x1 with output of 5x5 mapped with input
@@ -21,10 +23,10 @@ class Net(nn.Module):
     def forward(self, inputs):
         x = self.conv1(inputs)
         x = nn.Tanh()(x)
-        x = nn.AvgPool2d(kernel_size=2, stride=2)(x)
+        x = self.avg1(x)
         x = self.conv2(x)
         x = nn.Tanh()(x)
-        x = nn.AvgPool2d(kernel_size=2, stride=2)(x)
+        x = self.avg2(x)
         x = self.conv3(x)
         x = nn.Tanh()(x)
         x = x.view(-1, Net.num_flat_features(x))
