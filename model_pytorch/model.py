@@ -46,6 +46,6 @@ class LeNet(nn.Module):
         x = self.activation(x)
         x = nn.Flatten()(x)
         x = self.fc1(x)
-        x = nn.Sigmoid()(x)
+        x = self.activation(x)
         x = self.fc2(x)
         return x
