@@ -1,7 +1,7 @@
 import torch.nn as nn
 
 
-class LeNet(nn.Module):
+class LeNet5(nn.Module):
     def __init__(self, pool="max", activation="relu"):
         super(LeNet, self).__init__()
         # First convolution layer
