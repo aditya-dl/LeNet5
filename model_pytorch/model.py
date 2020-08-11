@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class LeNet5(nn.Module):
     def __init__(self, pool="max", activation="relu"):
-        super(LeNet, self).__init__()
+        super(LeNet5, self).__init__()
         # First convolution layer
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5)
         # Second convolution layer

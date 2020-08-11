@@ -1,6 +1,6 @@
 from torch.nn import CrossEntropyLoss
 import torch.optim as optim
-from torch import save
+import torch
 
 from model_pytorch import LeNet5
 from .dataloader import get_mnist
@@ -52,4 +52,4 @@ print(">>> Finished Training")
 PATH = "./lenet5.pth"
 
 # save model
-save(net.state_dict(), PATH)
+torch.save(net.state_dict(), PATH)
