@@ -2,15 +2,18 @@ from torch.nn import CrossEntropyLoss
 import torch.optim as optim
 import torch
 
-from model_pytorch import LeNet5
-from .dataloader import get_mnist
+import sys
 
+sys.path.append("..")
+
+from model_pytorch import LeNet5
+from dataloader import get_mnist
 
 # check if GPU is available
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # load model
-net = LeNet5()
+net = LeNet5(pool="avg", activation="relu")
 # if gpu is available, load model to gpu
 net.to(device)
 
@@ -22,7 +25,7 @@ optimizer = optim.Adam(net.parameters(), lr=2e-3)
 epochs = 10
 
 # get data
-train_loader, test_loader = get_mnist()
+train_loader, test_loader = get_mnist(path="./data/mnist", batch_size=256, shuffle=True, num_workers=8)
 
 for epoch in range(epochs):
     running_loss = 0.0
@@ -58,7 +61,7 @@ torch.save(net.state_dict(), PATH)
 correct = 0
 total = 0
 with torch.no_grad():
-    for data in testloader:
+    for data in test_loader:
         images, labels = data[0].to(device), data[1].to(device)
         outputs = net(images)
         _, predicted = torch.max(outputs.data, 1)
@@ -66,4 +69,4 @@ with torch.no_grad():
         correct += (predicted == labels).sum().item()
 
 print('Accuracy of the network on the 10000 test images: %d %%' % (
-    100 * correct / total))
+        100 * correct / total))
