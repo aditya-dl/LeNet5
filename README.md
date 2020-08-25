@@ -30,7 +30,7 @@ The requirements are arranged according to the framework in the **requirements**
 `python train.py` 
 4. The testing accuracy is printed after the training gets completed. The model is also saved as per the default parameters (if parameters are not provided while training).
 <br><br>
-Note - This assumes that you are in the virtual environment that contains all the dependencies.
+Note - This assumes that you are in the virtual environment that contain all the dependencies.
 
 ## 🎓Results
 #### PyTorch
