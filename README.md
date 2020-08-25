@@ -50,3 +50,9 @@ Note - This assumes that you are in the virtual environment that contain all the
 4. Inference scripts for images/videos.
 5. Jupyter notebooks for training and inference. 
 
+## 📚References
+1. [PyTorch](https://pytorch.org/)
+2. [Getting Started with Anaconda](https://docs.anaconda.com/anaconda/user-guide/getting-started/)
+3. [Getting Started with Python Virtual Environments](https://realpython.com/python-virtual-environments-a-primer/)
+4. [Gradient-based Learning Applied to Document recognition](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf)
+5. [LeNet-5](http://yann.lecun.com/exdb/lenet/) 
