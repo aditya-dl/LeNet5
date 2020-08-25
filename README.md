@@ -1,4 +1,5 @@
 # LeNet-5 - The first step to CNN(s)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 Convolutional Neural Networks are multi-layer neural networks that are trained using back-propagation. They are faster than normal perceptrons in recognizing visual patterns from images with minimal preprocessing. 
 
