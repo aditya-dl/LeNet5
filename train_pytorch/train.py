@@ -74,7 +74,7 @@ def evaluate(net, test_loader):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
-    print('Accuracy of the network on the 10000 test images: %d %%' % (
+    print('Accuracy of the network on the 10000 test images: %.2f %%' % (
             100 * correct / total))
 
 
